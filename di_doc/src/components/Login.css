@@ -1,0 +1,11 @@
+*{
+    justify-content: center;
+}
+
+.log{
+    position: relative;
+    background: rgb(22, 37, 248);
+    color: white;
+    font-weight: 100;
+    
+}

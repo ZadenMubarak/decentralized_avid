@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link,Navigate  } from "react-router-dom";
+import React from "react";
+import Login from "./components/Login";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+import UAuth from '@uauth/js'
+
+const uauth = new UAuth(
+  {
+    clientID: "5dccaa6b-ffde-407a-8f55-af2e0831faab",
+    redirectUri: "http://localhost:3000",
+    scope: "openid wallet"
+  
+  }
+)
+
+
+window.login = async () => {
+  try {
+    const authorization = await uauth.loginWithPopup()
+ 
+    console.log(authorization)
+  } catch (error) {
+    console.error(error)
+  }
 }
 
-export default App;
+
+window.logout = async () => {
+  await uauth.logout()
+  console.log('Logged out with Unstoppable')
+}
+
+
+
+// function App() {
+  
+
+//   return (
+//     <Router>
+//       <nav >
+      
+//         <Link to="/login">  Login </Link>
+//       </nav>
+//       <Routes>
+       
+//         <Route path="/login" element={<Login />} />
+//       </Routes>
+//       <div> Foooter </div>
+//       <button onClick={<Navigate to='/login' replace={true}/>}>route</button>
+//     </Router>
+//   );
+// }
+
+// export default App;
+

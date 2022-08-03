@@ -1,0 +1,1 @@
+{"mappings":"AAAA;;;;AAIA","sources":["src/components/Login.css"],"sourcesContent":["*{\r\n    justify-content: center;\r\n}\r\n\r\n.log{\r\n    position: relative;\r\n    background: rgb(22, 37, 248);\r\n    color: white;\r\n    font-weight: 100;\r\n    \r\n}"],"names":[],"version":3,"file":"index.d2103836.css.map","sourceRoot":"/__parcel_source_root/"}
